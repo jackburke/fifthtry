@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @story.title %>
+</p>
+
+<p>
+  <b>Synopsis:</b>
+  <%= @story.synopsis %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%= @story.body %>
+</p>
+
+<p>
+  <b>Author:</b>
+  <%= Author.find_by_id(@story.author_id).name %>
+</p>
+
+<h2>Visits</h2>
+  <p><span class="gray">Total:</span><%= @story.visit.total_visits rescue 0 %></p>
+  <p><span class="gray"><%= @story.visit.unique_visits rescue 0 %></p>
+
+
+<%= link_to 'Edit', edit_story_path(@story) %> |
+<%= link_to 'Back', stories_path %>
